@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSX and Babel</title>
+  <style>
+    p{
+      font-size: 80px;
+      text-align: center;
+    }
+
+    #surprise{
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 50px;
+      font-weight: 600;
+      border: 0;
+      background-color: #FF5B22;
+      color: white;
+      border-radius: 15px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #FB8B24;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+    let login = true;
+   
+    function surprise() {
+        alert("🎉🎉🎊🎊LET THIS NEW YEAR BRING YOU FULL OF SURPRISES 🎊🎊🎉🎉");
+    }
+
+    function JSXShowcase () {
+    return (
+        <div>
+            <p>JSX Deep Dive</p>
+            <p>{login ? "Success" : "Fail"}</p>
+            <div id="surprise"><button onClick={surprise}> Surprise</button></div>
+        </div>
+    );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<JSXShowcase />);
+  </script>
+</body>
+</html>
